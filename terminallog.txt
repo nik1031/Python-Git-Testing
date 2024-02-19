@@ -1,0 +1,209 @@
+nikitakoniakhin@192 ~ % cd Desktop
+nikitakoniakhin@192 Desktop % mkdir Story
+nikitakoniakhin@192 Desktop % cd Story
+nikitakoniakhin@192 Story % ls
+nikitakoniakhin@192 Story % touch chapter1.txt
+nikitakoniakhin@192 Story % open -a chapter1.txt 
+Unable to find application named 'chapter1.txt'
+nikitakoniakhin@192 Story % cd ..
+nikitakoniakhin@192 Desktop % cd Story
+nikitakoniakhin@192 Story % ls
+chapter1.txt
+nikitakoniakhin@192 Story % open chapter1.txt
+nikitakoniakhin@192 Story % git init
+Initialized empty Git repository in /Users/nikitakoniakhin/Desktop/Story/.git/
+nikitakoniakhin@192 Story % ls -a
+.               ..              .git            chapter1.txt
+nikitakoniakhin@192 Story % git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        chapter1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+nikitakoniakhin@192 Story % git add  chapter1.txt
+nikitakoniakhin@192 Story % git status
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   chapter1.txt
+
+nikitakoniakhin@192 Story % git commit -m "Complete Cahapter 1"         
+[main (root-commit) a39a75d] Complete Cahapter 1
+ Committer: Nikita Koniakhin <nikitakoniakhin@192.168.1.149>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 chapter1.txt
+nikitakoniakhin@192 Story % git log
+commit a39a75d7ac3240bf6a7b2de17043414f017987b6 (HEAD -> main)
+Author: Nikita Koniakhin <nikitakoniakhin@192.168.1.149>
+Date:   Mon Feb 19 10:34:46 2024 +0000
+
+    Complete Cahapter 1
+nikitakoniakhin@192 Story % touch chapter 2.txt
+nikitakoniakhin@192 Story % touch chapter 3.txt
+nikitakoniakhin@192 Story % open chapter 2.txt
+nikitakoniakhin@192 Story % ls 
+2.txt           3.txt           chapter         chapter1.txt
+nikitakoniakhin@192 Story % mv 2.txt chapter2.txt
+nikitakoniakhin@192 Story % ,v 3.txt chapter3.txt
+zsh: command not found: ,v
+nikitakoniakhin@192 Story % mv 3.txt chapter3.txt
+nikitakoniakhin@192 Story % rm -rf chapter
+nikitakoniakhin@192 Story % ls
+chapter1.txt    chapter2.txt    chapter3.txt
+nikitakoniakhin@192 Story % open chapter1.txt
+nikitakoniakhin@192 Story % open chapter2.txt
+nikitakoniakhin@192 Story % open chapter3.txt
+nikitakoniakhin@192 Story % ls
+chapter1.txt    chapter2.txt    chapter3.txt
+nikitakoniakhin@192 Story % git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        chapter2.txt
+        chapter3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+nikitakoniakhin@192 Story % git add chapter2.txt chapter3.txt
+nikitakoniakhin@192 Story % git log
+commit a39a75d7ac3240bf6a7b2de17043414f017987b6 (HEAD -> main)
+Author: Nikita Koniakhin <nikitakoniakhin@192.168.1.149>
+Date:   Mon Feb 19 10:34:46 2024 +0000
+
+    Complete Cahapter 1
+nikitakoniakhin@192 Story % git reset chapter2.txt
+nikitakoniakhin@192 Story % git reset chapter3.txt
+nikitakoniakhin@192 Story % git log
+commit a39a75d7ac3240bf6a7b2de17043414f017987b6 (HEAD -> main)
+Author: Nikita Koniakhin <nikitakoniakhin@192.168.1.149>
+Date:   Mon Feb 19 10:34:46 2024 +0000
+
+    Complete Cahapter 1
+nikitakoniakhin@192 Story % git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        chapter2.txt
+        chapter3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+nikitakoniakhin@192 Story % git add .
+nikitakoniakhin@192 Story % git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   chapter2.txt
+        new file:   chapter3.txt
+
+nikitakoniakhin@192 Story % git commit -m "Complete chapter 2 and chapter 3"
+[main b65e05d] Complete chapter 2 and chapter 3
+ Committer: Nikita Koniakhin <nikitakoniakhin@192.168.1.149>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 2 insertions(+)
+ create mode 100644 chapter2.txt
+ create mode 100644 chapter3.txt
+nikitakoniakhin@192 Story % git log
+commit b65e05d00bd51aa59ffce8caf012e19ab3252e55 (HEAD -> main)
+Author: Nikita Koniakhin <nikitakoniakhin@192.168.1.149>
+Date:   Mon Feb 19 10:41:25 2024 +0000
+
+    Complete chapter 2 and chapter 3
+
+commit a39a75d7ac3240bf6a7b2de17043414f017987b6
+Author: Nikita Koniakhin <nikitakoniakhin@192.168.1.149>
+Date:   Mon Feb 19 10:34:46 2024 +0000
+
+    Complete Cahapter 1
+nikitakoniakhin@192 Story % git log
+commit b65e05d00bd51aa59ffce8caf012e19ab3252e55 (HEAD -> main)
+Author: Nikita Koniakhin <nikitakoniakhin@192.168.1.149>
+Date:   Mon Feb 19 10:41:25 2024 +0000
+
+    Complete chapter 2 and chapter 3
+
+commit a39a75d7ac3240bf6a7b2de17043414f017987b6
+Author: Nikita Koniakhin <nikitakoniakhin@192.168.1.149>
+Date:   Mon Feb 19 10:34:46 2024 +0000
+
+    Complete Cahapter 1
+nikitakoniakhin@192 Story % open chapter3.txt
+nikitakoniakhin@192 Story % git status
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   chapter3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+nikitakoniakhin@192 Story % git diff chapter3.txt   
+diff --git a/chapter3.txt b/chapter3.txt
+index b738dc0..d9392ce 100644
+--- a/chapter3.txt
++++ b/chapter3.txt
+@@ -1 +1 @@
+-And daring awesome
+\ No newline at end of file
++And daring awesomeefqwEFGwekuhefkhwiuFHIUWhe
+\ No newline at end of file
+nikitakoniakhin@192 Story % git checkout
+M       chapter3.txt
+nikitakoniakhin@192 Story % chapter3.txt
+zsh: command not found: chapter3.txt
+nikitakoniakhin@192 Story % got checkout chapter3.txt
+zsh: command not found: got
+nikitakoniakhin@192 Story % git checkout chapter3.txt
+Updated 1 path from the index
+nikitakoniakhin@192 Story % git log
+commit b65e05d00bd51aa59ffce8caf012e19ab3252e55 (HEAD -> main)
+Author: Nikita Koniakhin <nikitakoniakhin@192.168.1.149>
+Date:   Mon Feb 19 10:41:25 2024 +0000
+
+    Complete chapter 2 and chapter 3
+
+commit a39a75d7ac3240bf6a7b2de17043414f017987b6
+Author: Nikita Koniakhin <nikitakoniakhin@192.168.1.149>
+Date:   Mon Feb 19 10:34:46 2024 +0000
+
+    Complete Cahapter 1
+nikitakoniakhin@192 Story % git log
+commit b65e05d00bd51aa59ffce8caf012e19ab3252e55 (HEAD -> main)
+Author: Nikita Koniakhin <nikitakoniakhin@192.168.1.149>
+Date:   Mon Feb 19 10:41:25 2024 +0000
+
+    Complete chapter 2 and chapter 3
+
+commit a39a75d7ac3240bf6a7b2de17043414f017987b6
+Author: Nikita Koniakhin <nikitakoniakhin@192.168.1.149>
+Date:   Mon Feb 19 10:34:46 2024 +0000
+
+    Complete Cahapter 1
+nikitakoniakhin@192 Story %      
